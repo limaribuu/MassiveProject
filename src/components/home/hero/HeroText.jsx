@@ -26,7 +26,6 @@ export default function HeroText({ slide }) {
         {slide.desc}
       </p>
 
-      {/* Tombol menuju halaman detail */}
       <Link
         to={`/detail/${slide.id}`}
         className="inline-block mt-6 rounded-xl bg-white/95 text-gray-900 px-5 py-3 font-semibold hover:bg-white transition"
@@ -34,7 +33,6 @@ export default function HeroText({ slide }) {
         Lihat Selengkapnya
       </Link>
 
-      {/* Define keyframes langsung di dalam komponen */}
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(12px); }

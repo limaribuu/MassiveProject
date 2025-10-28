@@ -40,7 +40,6 @@ export default function ProfileSettings() {
                 />
             </div>
 
-            {/* Kategori Favorit */}
             <div className="mt-8">
                 <h3 className="text-base font-semibold text-gray-800 mb-3">Kategori Favorit</h3>
                 <ProfileChips

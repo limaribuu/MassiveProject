@@ -3,7 +3,6 @@ import React from "react";
 export default function ProfileSidebar() {
     return (
         <aside>
-            {/* user mini card */}
             <div className="flex items-center gap-3">
                 <img
                     src="/avatar-mini.png"
@@ -16,13 +15,10 @@ export default function ProfileSidebar() {
                 </div>
             </div>
 
-            {/* spacing */}
             <div className="h-8" />
 
-            {/* section title */}
             <h3 className="text-gray-700 font-semibold">Destinasi Favorit</h3>
 
-            {/* nav */}
             <nav className="mt-3">
                 <button
                     className="text-[#F1721D] font-medium"

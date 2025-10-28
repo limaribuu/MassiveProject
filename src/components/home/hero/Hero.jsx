@@ -33,28 +33,17 @@ const AUTOPLAY_MS = 4500;
 export default function Hero() {
     const [index, setIndex] = useState(0);
 
-    //useEffect(() => {
-        //const t = setInterval(() => {
-            //setIndex((i) => (i + 1) % SLIDES.length);
-        //}, AUTOPLAY_MS);
-        //return () => clearInterval(t);
-    //}, []);
-
     const goTo = (i) => setIndex(i);
     const idx = index;
     const activeSlide = useMemo(() => SLIDES[idx], [idx]);
 
     return (
         <section className="relative isolate min-h-[540px] md:min-h-[620px] overflow-hidden">
-            {/* Background sync to active */}
             <HeroBackground src={activeSlide.bg} />
 
-            {/* Content */}
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-10 md:py-14 flex flex-col md:flex-row items-start md:items-center gap-10">
-                {/* Left: text */}
                 <HeroText key={activeSlide.id} slide={activeSlide} />
 
-                {/* Right: slider */}
                 <HeroSlider
                     slides={SLIDES}
                     activeIndex={index}
@@ -62,7 +51,6 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Dots */}
             <HeroDots
                 total={SLIDES.length}
                 active={idx}

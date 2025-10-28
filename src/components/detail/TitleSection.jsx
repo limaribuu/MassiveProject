@@ -7,10 +7,10 @@ const TitleSection = ({ title, onAdd }) => {
 
       <button
         onClick={onAdd}
-        className="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-sm transition"
+        className="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-white text-sm font-semibold px-5 py-2.5 rounded-[14px] shadow-md transition mt-1"
       >
-        <span>Tambahkan ke Itenary</span>
-        <img src="/img/plus.png" alt="Tambah" className="w-4 h-4" />
+        <span>Tambahkan ke Itinerary</span>
+        <img src="/icon/plus.png" alt="Tambah" className="w-4 h-4" />
       </button>
     </div>
   );

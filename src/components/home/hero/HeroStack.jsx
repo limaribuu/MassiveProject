@@ -1,7 +1,6 @@
 import React from "react";
 
 function Card({ slide, variant = "active", onClick }) {
-  // varian posisi: active | prev | next (sesuai video: active paling besar)
   const variants = {
     active:
       "z-20 scale-100 rotate-0 translate-x-0 opacity-100 shadow-xl",
@@ -29,7 +28,6 @@ function Card({ slide, variant = "active", onClick }) {
         className="h-full w-full object-cover select-none pointer-events-none"
         draggable="false"
       />
-      {/* subtle gradient bottom (biar look sama prototype) */}
       <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-black/35 to-transparent" />
     </button>
   );
@@ -50,7 +48,6 @@ export default function HeroStack({
     <div className="w-full md:w-[48%] flex justify-center md:justify-end">
       <div className="relative"
            style={{ width: 420, height: 280 }}>
-        {/* order: prev, active, next → z-index via variants */}
         <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
           <Card slide={prev} variant="prev" onClick={() => onSelect(prevIndex)} />
         </div>

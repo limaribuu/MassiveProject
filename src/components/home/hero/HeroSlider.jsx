@@ -22,16 +22,15 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
         }, 700);
     };
 
-    // ukuran slot
     const GAP = 24;
     const BIG = { w: 380, h: 480, left: 0, top: 0 };
     const SMALL = {
         w: 160,
         h: 240,
-        left: BIG.w + GAP, // 404px
-        top: Math.round((BIG.h - 240) / 2), // 120px
+        left: BIG.w + GAP,
+        top: Math.round((BIG.h - 240) / 2),
     };
-    const WRAP = { w: BIG.w + GAP + SMALL.w, h: BIG.h }; // 564x480
+    const WRAP = { w: BIG.w + GAP + SMALL.w, h: BIG.h };
 
     return (
         <div className="w-full md:w-[48%] flex justify-center md:justify-end select-none">
@@ -39,7 +38,6 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                 className="relative overflow-visible"
                 style={{ width: WRAP.w, height: WRAP.h }}
             >
-                {/* ===== GAMBAR BESAR (kiri) ===== */}
                 <div
                     className={[
                         "absolute rounded-2xl overflow-hidden shadow-xl will-change-transform",
@@ -59,10 +57,9 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         className="w-full h-full object-cover rounded-2xl"
                         draggable="false"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent rounded-b-2xl" />
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/30 to-transparent rounded-b-2xl" />
                 </div>
 
-                {/* ===== GAMBAR KECIL (kanan, diklik → jadi besar) ===== */}
                 <button
                     type="button"
                     onClick={handleClickSmall}
@@ -77,7 +74,6 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         top: SMALL.top,
                         zIndex: 25,
                         transformOrigin: "center center",
-                        // 🔥 penting: HAPUS transition-all biar gak bentrok dengan keyframes
                         willChange: "transform, opacity",
                     }}
                     aria-label={next.title}
@@ -88,10 +84,9 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         className="w-full h-full object-cover rounded-xl"
                         draggable="false"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent rounded-b-xl" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/25 to-transparent rounded-b-xl" />
                 </button>
 
-                {/* ===== GAMBAR KETIGA (masuk dari kanan → jadi kecil kanan) ===== */}
                 <div
                     className={[
                         "absolute rounded-xl overflow-hidden shadow-md will-change-transform",
@@ -112,10 +107,9 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         className="w-full h-full object-cover rounded-xl"
                         draggable="false"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/25 to-transparent rounded-b-xl" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/25 to-transparent rounded-b-xl" />
                 </div>
 
-                {/* ===== INLINE KEYFRAMES ===== */}
                 <style>{`
                     /* Fade & geser kiri untuk gambar besar */
                     @keyframes bigOutLeftFade {

@@ -12,7 +12,7 @@ const InfoSidebar = () => {
   return (
     <aside className="bg-white rounded-2xl border border-orange-200 shadow-sm p-4">
       <div className="space-y-6">
-        <Row icon="/img/clock.png" title="Jam Operasional">
+        <Row icon="/icon/clock.png" title="Jam Operasional">
           <div className="text-zinc-800">
             Selasa – Minggu
             <br />
@@ -20,7 +20,7 @@ const InfoSidebar = () => {
           </div>
         </Row>
 
-        <Row icon="/img/location.png" title="Lokasi">
+        <Row icon="/icon/location.png" title="Lokasi">
           <div className="text-orange-600">
             Sultan Mahmud Badaruddin II Museum, Jl.
             <br />
