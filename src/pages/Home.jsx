@@ -14,6 +14,16 @@ export default function Home() {
             <main>
                 <Hero />
 
+                <div className="text-3xl font-bold text-gray-900 leading-tight text-center my-8">
+                    Rekomendasi Destinasi 
+                    <br />Hidden Gem
+                </div>
+                <RecommendationSection />
+
+                <div className="text-3xl font-bold text-gray-900 leading-tight text-center my-8">
+                    Rekomendasi Destinasi 
+                    <br /> Populer
+                </div>
                 <RecommendationSection />
             </main>
 

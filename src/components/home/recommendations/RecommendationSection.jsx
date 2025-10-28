@@ -35,12 +35,6 @@ export default function RecommendationSection() {
 
     return (
         <section className="rc">
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight text-center my-8">
-                Rekomendasi Destinasi
-                <br />
-                Hidden Gem
-            </h2>
-
             <div className="rc__grid">
                 {items.map((it) => (
                     <RecommendationCard
