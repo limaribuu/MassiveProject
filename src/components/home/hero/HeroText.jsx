@@ -7,7 +7,7 @@ export default function HeroText({ slide }) {
       <h1
         className="text-white text-3xl md:text-5xl font-extrabold leading-tight
                    opacity-0 translate-y-3 transition-all duration-500 ease-out
-                   [animation:fadeInUp_500ms_forwards]"
+                   animate-[fadeInUp_500ms_forwards]"
         style={{
           animation: "fadeInUp 500ms forwards",
         }}
@@ -18,7 +18,7 @@ export default function HeroText({ slide }) {
       <p
         className="mt-4 text-white/90 text-base md:text-lg leading-relaxed
                    opacity-0 translate-y-3 transition-all duration-700 delay-150
-                   [animation:fadeInUp_700ms_150ms_forwards]"
+                   animate-[fadeInUp_700ms_150ms_forwards]"
         style={{
           animation: "fadeInUp 700ms 150ms forwards",
         }}

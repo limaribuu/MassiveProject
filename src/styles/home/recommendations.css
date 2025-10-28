@@ -1,22 +1,33 @@
+/* === WRAPPER === */
 .rc {
     max-width: 1200px;
-    margin: 42px auto 60px;
-    padding: 0 20px;
+    margin: 60px auto;
+    padding: 0 24px;
     font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    text-align: center;
 }
 
+/* Judul Section */
+.rc__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 28px;
+}
 
 @media (max-width: 768px) {
     .rc__title {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 22px;
     }
 }
 
+/* === GRID LAYOUT === */
 .rc__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-top: 18px;
+    gap: 32px;
+    justify-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -30,19 +41,23 @@
     }
 }
 
+/* === CARD === */
 .rc-card {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
     background: #000;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-    transition: transform .18s ease, box-shadow .18s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    max-width: 370px;
+    width: 100%;
 }
 .rc-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
 }
 
+/* === CARD MEDIA === */
 .rc-card__media {
     position: relative;
     height: 360px;
@@ -50,56 +65,65 @@
 
 .rc-card__img {
     width: 100%;
-    height: 130%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
+/* === BADGE === */
 .rc-card__badge {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 999px;
     background: #fff;
     display: grid;
     place-items: center;
-    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 .rc-card__bookmark {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
 }
 
+/* === OVERLAY === */
 .rc-card__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 75%, rgba(0,0,0,.75) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.55) 75%,
+        rgba(0, 0, 0, 0.75) 100%
+    );
 }
 
+/* === CARD CONTENT === */
 .rc-card__content {
     position: absolute;
     left: 18px;
     right: 18px;
     bottom: 16px;
     color: #fff;
+    text-align: left;
 }
 
 .rc-card__title {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 800;
-    letter-spacing: .2px;
     margin: 0 0 8px 0;
 }
 
 .rc-card__desc {
     font-size: 14px;
     line-height: 1.55;
-    opacity: .95;
+    opacity: 0.95;
     max-width: 92%;
 }
 
+/* === FOOTER === */
 .rc-card__footer {
     display: flex;
     align-items: center;
@@ -117,46 +141,48 @@
     font-size: 14px;
     padding: 10px 18px;
     border-radius: 999px;
-    box-shadow: 0 10px 16px rgba(249, 115, 22, .25);
-    transition: background .15s ease;
+    box-shadow: 0 10px 16px rgba(249, 115, 22, 0.25);
+    transition: background 0.15s ease;
 }
 .rc-card__btn:hover {
     background: #ea580c;
 }
 
+/* === RATING === */
 .rc-card__rating {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 18px;
 }
 .rc-card__star {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 .rc-card__score {
-    filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
 }
 
+/* === CTA (Lihat Selengkapnya) === */
 .rc__cta-wrap {
     display: flex;
     justify-content: center;
-    margin: 28px 0 0;
+    margin-top: 32px;
 }
 
 .rc__cta {
-    background: #f4cbb7;
-    color: #ffffff;
-    opacity: .95;
+    background: #f97316;
+    color: #fff;
     border: 0;
     border-radius: 12px;
     padding: 14px 26px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
-    transition: filter .15s ease;
+    transition: all 0.15s ease;
 }
 .rc__cta:hover {
-    filter: brightness(0.98);
+    background: #ea580c;
+    transform: scale(1.05);
 }
