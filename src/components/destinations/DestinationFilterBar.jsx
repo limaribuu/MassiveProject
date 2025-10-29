@@ -30,7 +30,6 @@ const DestinationFilterBar = ({ onSearch }) => {
           }
         />
 
-        {/* Garis pemisah */}
         <div className="h-10 w-px bg-gray-300 hidden md:block"></div>
 
         <ChooseButton

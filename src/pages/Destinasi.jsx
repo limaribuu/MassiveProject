@@ -1,32 +1,113 @@
+import React, { useMemo, useState } from "react";
 import DestinationFilterBar from "../components/destinations/DestinationFilterBar.jsx";
 import Navbar from "../components/common/Navbar.jsx";
 import Footer from "../components/common/Footer.jsx";
+import RecommendationSection from "../components/home/recommendations/RecommendationSection.jsx";
+import Pagination from "../components/common/Pagination.jsx";
 
 const Destinasi = () => {
-  return (
-    <>
-      <Navbar />
-      <div className="bg-white pb-20">
-        <div>
-          <img
-            src="/img/hero-destinasi.png"
-            className="w-full h-auto rounded-2xl object-cover p-20"
-          />
-        </div>
+    const [page, setPage] = useState(1);
 
-        <div className="text-center mt-5 mb-9">
-          <h1 className="text-3xl font-bold text-gray-800">
-            Rasakan pengalaman baru <br /> destinasi favorit Palembang
-          </h1>
-        </div>
+    const hiddenGems = useMemo(() => [
+        {
+            id: 1,
+            title: "Museum Balaputra Dewa",
+            desc: "Museum arkeologi dan budaya Sumatera Selatan.",
+            img: "/reco/balaputra.png",
+            rating: 4.0,
+            to: "/detail/museum-balaputra",
+        },
+        {
+            id: 2,
+            title: "Bukit Siguntang",
+            desc: "Situs bersejarah Kerajaan Sriwijaya.",
+            img: "/reco/bukit-siguntang.png",
+            rating: 4.0,
+            to: "/detail/bukit-siguntang",
+        },
+        {
+            id: 3,
+            title: "Benteng Kuto Besak",
+            desc: "Benteng peninggalan Kesultanan Palembang.",
+            img: "/reco/bkb.png",
+            rating: 4.0,
+            to: "/detail/bkb",
+        },
+        {
+            id: 4,
+            title: "Benteng Kuto Besak",
+            desc: "Benteng peninggalan Kesultanan Palembang yang terletak di tepi Sungai Musi.",
+            img: "/reco/bkb.png",
+            rating: 4.0,
+            to: "/detail/bkb",
+        },
+        {
+            id: 5,
+            title: "Jembatan Ampera",
+            desc: "Ikon kota Palembang di atas Sungai Musi—wajib foto!",
+            img: "/reco/ampera.png",
+            rating: 4.0,
+            to: "/detail/ampera",
+        },
+        {
+            id: 6,
+            title: "Pulau Kemaro",
+            desc: "Pulau di Sungai Musi dengan pagoda, vihara, dan legenda Tan Bun An & Siti Fatimah.",
+            img: "/reco/pulau-kemaro.png",
+            rating: 4.0,
+            to: "/detail/pulau-kemaro",
+        },
+    ], []);
 
-        <div className="relative -mt-4">
-          <DestinationFilterBar />
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+    const perPage = 3;
+    const totalPages = Math.ceil(hiddenGems.length / perPage);
+
+    const pagedItems = useMemo(() => {
+        const start = (page - 1) * perPage;
+        return hiddenGems.slice(start, start + perPage);
+    }, [page, hiddenGems]);
+
+    const handlePageChange = (p) => {
+        const next = Math.min(Math.max(1, p), totalPages);
+        setPage(next);
+    };
+
+    return (
+        <>
+            <Navbar />
+
+            <div className="bg-white pb-20">
+                <div>
+                    <img
+                        src="/img/hero-destinasi.png"
+                        alt="Destinasi Palembang"
+                        className="w-full h-auto rounded-2xl object-cover p-20"
+                    />
+                </div>
+
+                <div className="text-center mt-5 mb-9">
+                    <h1 className="text-3xl font-bold text-gray-800">
+                        Rasakan pengalaman baru <br /> destinasi favorit Palembang
+                    </h1>
+                </div>
+
+                <div className="relative -mt-4">
+                    <DestinationFilterBar />
+                </div>
+            </div>
+
+            <RecommendationSection items={pagedItems} />
+
+            <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+                className="m-20"
+            />
+
+            <Footer />
+        </>
+    );
 };
 
 export default Destinasi;

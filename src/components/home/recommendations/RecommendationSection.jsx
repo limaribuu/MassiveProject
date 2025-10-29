@@ -1,9 +1,8 @@
-// src/components/home/recommendations/RecommendationSection.jsx
 import React from "react";
 import RecommendationCard from "./RecommendationCard.jsx";
 import "../../../styles/home/recommendations.css";
 
-export default function RecommendationSection({ title, items = [], onMore }) {
+export default function RecommendationSection({ title, items = [] }) {
     return (
         <section className="rc">
             {title && (
@@ -13,7 +12,7 @@ export default function RecommendationSection({ title, items = [], onMore }) {
             )}
 
             <div className="rc__grid">
-                {(items || []).map((it) => (
+                {items.map((it) => (
                     <RecommendationCard
                         key={it.id}
                         title={it.title}
@@ -24,13 +23,6 @@ export default function RecommendationSection({ title, items = [], onMore }) {
                     />
                 ))}
             </div>
-
-            <div className="rc__cta-wrap">
-                <button className="rc__cta" type="button" onClick={onMore}>
-                    Lihat Selengkapnya
-                </button>
-            </div>
         </section>
     );
 }
-
