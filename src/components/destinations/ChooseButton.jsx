@@ -32,7 +32,7 @@ const ChooseButton = ({
                 {iconSrc && <img src={iconSrc} alt="" className="h-5 w-5" />}
                 <span>{value || label}</span>
                 <img
-                    src="/img/chevron-down.png"
+                    src="/icon/chevron3.png"
                     className={`ml-auto h-4 w-4 transition ${open ? "rotate-180" : ""}`}
                 />
             </button>

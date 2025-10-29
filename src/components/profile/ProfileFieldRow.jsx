@@ -15,7 +15,6 @@ export default function ProfileFieldRow({ label, value, editable = false }) {
                     aria-label={`Ubah ${label}`}
                     title={`Ubah ${label}`}
                 >
-                    {/* pakai gambar PNG/JPG dari /public/icons/edit.png */}
                     <img
                         src="/icons/edit.png"
                         alt="Edit"

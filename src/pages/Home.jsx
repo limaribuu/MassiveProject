@@ -3,6 +3,7 @@ import Navbar from "../components/common/Navbar.jsx";
 import Hero from "../components/home/hero/Hero.jsx";
 import RecommendationSection from "../components/home/recommendations/RecommendationSection.jsx";
 import Footer from "../components/common/Footer.jsx";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     const hiddenGems = [
@@ -74,7 +75,7 @@ export default function Home() {
                         <img
                             src="/img/peta.png"
                             alt="Peta Lokasi Museum Sultan Mahmud Badaruddin II"
-                            className="w-full max-w-[1300px] h-auto rounded-xl shadow-md"
+                            className="w-full max-w-[1450px] h-auto rounded-xl shadow-md"
                         />
                     </div>
                 </div>
@@ -86,9 +87,11 @@ export default function Home() {
                 <RecommendationSection items={hiddenGems} />
 
                 <div className="rc__cta-wrap">
-                    <button className="rc__cta mb-20" type="button">
-                        Lihat Selengkapnya
-                    </button>
+                <Link
+                    to="/hidden-gem"
+                    className="rc__cta mb-20 inline-block text-center">
+                    Lihat Selengkapnya
+                </Link>
                 </div>
 
                 <div className="text-3xl font-bold text-gray-900 leading-tight text-center my-8">
@@ -98,9 +101,11 @@ export default function Home() {
                 <RecommendationSection items={popular} />
 
                 <div className="rc__cta-wrap">
-                    <button className="rc__cta mb-30" type="button">
-                        Lihat Selengkapnya
-                    </button>
+                <Link
+                    to="/populer"
+                    className="rc__cta mb-30 inline-block text-center" >
+                    Lihat Selengkapnya
+                </Link>
                 </div>
             </main>
             <Footer />

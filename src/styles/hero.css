@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,6 @@ body {
     background: #fff;
 }
 
-/* HERO SECTION */
 .hero {
     position: relative;
     width: 100%;
@@ -18,7 +16,6 @@ body {
     overflow: hidden;
 }
 
-/* BACKGROUND */
 .hero-bg {
     position: absolute;
     inset: 0;
@@ -29,7 +26,6 @@ body {
     transition: .6s ease-in-out;
 }
 
-/* CONTENT WRAP */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -37,10 +33,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 130px; /* DILEBARKAN KIRI KANAN */
+    padding: 0 130px; 
 }
 
-/* LEFT CONTENT */
 .hero-left {
     width: 48%;
     color: white;
@@ -95,7 +90,6 @@ body {
     background: #ff8128;
 }
 
-/* RIGHT IMAGES STACK */
 .hero-right {
     width: 44%;
     display: flex;
@@ -109,7 +103,6 @@ body {
     height: 380px;
 }
 
-/* CARD IMAGE */
 .card {
     position: absolute;
     cursor: pointer;
@@ -119,7 +112,6 @@ body {
     transition: all .45s ease;
 }
 
-/* POSITIONING */
 .card.active {
     width: 380px;
     height: 270px;
@@ -147,7 +139,6 @@ body {
     z-index: 1;
 }
 
-/* DOTS */
 .dots {
     position: absolute;
     bottom: 20px;

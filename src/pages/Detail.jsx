@@ -93,7 +93,12 @@ const Detail = () => {
                 Rekomendasi Destinasi
             </div>
 
-            <RecommendationSection items={hiddenGems} />
+            <div className="flex justify-center px-4">
+                <div className="w-full max-w-[1200px]">
+                    <RecommendationSection items={hiddenGems} />
+                </div>
+            </div>
+
             <Footer />
         </>
     );

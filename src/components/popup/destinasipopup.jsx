@@ -1,14 +1,11 @@
 export default function DestinationPopup() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      {/* Notification Card */}
       <div className="bg-white rounded-2xl shadow-lg p-8 w-[30%] text-center">
-        {/* Title */}
         <h2 className="text-2xl font-bold text-orange-500 mb-6">
           Destinasi Tersimpan
         </h2>
 
-        {/* Check Icon */}
         <div className="flex justify-center">
           <div className="bg-orange-500 rounded-full w-15 h-15 flex items-center justify-center">
             <svg 

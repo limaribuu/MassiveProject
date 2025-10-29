@@ -5,6 +5,8 @@ import Detail from "./pages/Detail.jsx";
 import Destinasi from "./pages/Destinasi.jsx";
 import Ulasan from "./pages/Ulasan.jsx";
 import Itinerary from "./pages/Itinerary.jsx"
+import HiddenGem from "./pages/HiddenGem.jsx";  
+import Populer from "./pages/Populer.jsx";     
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
       <Route path="/itinerary" element={<Itinerary />} />
       <Route path="/detail/:id" element={<Detail />} /> 
       <Route path="*" element={<Navigate to="/home" replace />} />
+      <Route path="/hidden-gem" element={<HiddenGem />} />
+      <Route path="/populer" element={<Populer />} />
     </Routes>
   );
 }

@@ -1,12 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "../../styles/home/map.css";
 
-/**
- * Catatan koordinat:
- * - viewBox SVG = 1000 x 600
- * - Setiap marker pakai koordinat { x, y } dalam skala viewBox itu.
- * - Ubah posisi dengan mudah: cukup ganti angka x,y.
- */
 export default function InteractiveMap() {
     const markers = useMemo(
         () => [
@@ -53,7 +47,6 @@ export default function InteractiveMap() {
                     role="img"
                     aria-label="Peta Palembang dengan penanda lokasi wisata"
                 >
-                    {/* Background: gambar peta Palembang */}
                     <image
                         href="/images/palembang-map.svg"
                         x="0"
@@ -63,7 +56,6 @@ export default function InteractiveMap() {
                         preserveAspectRatio="xMidYMid meet"
                     />
 
-                    {/* Marker pins */}
                     {markers.map((m) => (
                         <g
                             key={m.id}
@@ -72,7 +64,6 @@ export default function InteractiveMap() {
                             onMouseEnter={(e) => showTip(e, m.title)}
                             onMouseLeave={hideTip}
                         >
-                            {/* Bentuk pin (tear-drop) */}
                             <path
                                 d="M0,-18 C-9,-18 -16,-11 -16,-2 C-16,7 -6,15 0,22 C6,15 16,7 16,-2 C16,-11 9,-18 0,-18 Z"
                                 className="imap__pin-body"
@@ -82,7 +73,6 @@ export default function InteractiveMap() {
                     ))}
                 </svg>
 
-                {/* Tooltip html positioned absolute */}
                 {tooltip && (
                     <div
                         className="imap__tooltip"
