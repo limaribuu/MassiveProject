@@ -1,32 +1,28 @@
-/* ==== Recommendation Section (full width, dekat dengan hero) ==== */
 .rc {
     max-width: none;
     width: 100%;
-    margin: 32px 0 40px;      /* jarak vertikal lebih rapat */
-    padding: 0 55px;          /* lebar kanan–kiri (samain dgn hero kalau perlu) */
+    margin: 32px 0 40px;      
+    padding: 0 55px;         
     font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     text-align: center;
 }
 
-/* Judul besar seperti di Figma */
 .rc__title,
 .rc h2 {
     font-size: 40px;
     font-weight: 800;
     line-height: 1.15;
     color: #111827;
-    margin: 0 0 16px 0;       /* lebih dekat ke grid */
+    margin: 0 0 16px 0;      
 }
 
-/* Grid 3 kolom tetap, jarak antar kartu lebih dekat */
 .rc__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;             /* <= susutkan kalau mau lebih mepet: 16px */
+    gap: 30px;            
     align-items: stretch;
 }
 
-/* Responsif */
 @media (max-width: 1200px) {
     .rc__grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -40,7 +36,6 @@
     .rc { padding: 0 16px; }
 }
 
-/* ==== Card ==== */
 .rc-card {
     position: relative;
     border-radius: 18px;
@@ -48,8 +43,8 @@
     background: #000;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
-    max-width: none;          /* ❗️hapus batas 370px */
-    width: 100%;              /* isi kolom penuh */
+    max-width: none;          
+    width: 100%;              
 }
 
 .rc-card:hover {
@@ -57,10 +52,9 @@
     box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
 }
 
-/* Gambar dibesarkan */
 .rc-card__media {
     position: relative;
-    height: 460px;            /* 420 -> 460 biar lebih besar; boleh 480 kalau mau */
+    height: 460px;           
 }
 
 .rc-card__img {
@@ -70,7 +64,6 @@
     display: block;
 }
 
-/* Badge bookmark */
 .rc-card__badge {
     position: absolute;
     top: 16px;
@@ -85,7 +78,6 @@
 }
 .rc-card__bookmark { width: 22px; height: 22px; }
 
-/* Overlay kuat supaya teks kebaca */
 .rc-card__overlay {
     position: absolute;
     inset: 0;
@@ -97,7 +89,6 @@
     );
 }
 
-/* Konten bawah */
 .rc-card__content {
     position: absolute;
     left: 18px;
@@ -108,7 +99,7 @@
 }
 
 .rc-card__title {
-    font-size: 24px;          /* 22 -> 24 biar lebih tebal */
+    font-size: 24px;          
     font-weight: 800;
     margin: 0 0 8px 0;
 }
@@ -120,7 +111,6 @@
     max-width: 95%;
 }
 
-/* Footer: tombol & rating */
 .rc-card__footer {
     display: flex;
     align-items: center;

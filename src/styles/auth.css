@@ -1,4 +1,3 @@
-/* ========== Reset & Base ========== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,7 +15,6 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* ========== Layout Container ========== */
 .container {
     display: flex;
     width: 900px;
@@ -27,7 +25,6 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,.1);
 }
 
-/* ========== Left: Form Area ========== */
 .body-container {
     flex: 1;
     background: #E6E6E6;

@@ -14,23 +14,20 @@
     margin-bottom: 18px;
 }
 
-/* Frame biru seperti gambar */
 .imap__frame {
     position: relative;
-    border: 3px solid #1e90ff; /* biru outline */
+    border: 3px solid #1e90ff; 
     border-radius: 4px;
-    padding: 8px;               /* sedikit inner space agar mirip mock */
+    padding: 8px;              
     background: #fff;
 }
 
-/* SVG responsif */
 .imap__svg {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Pins */
 .imap__pin {
     cursor: pointer;
     transform-origin: center;
@@ -40,14 +37,13 @@
     transform: translate(var(--x, 0), var(--y, 0)) scale(1.07);
 }
 .imap__pin-body {
-    fill: #f97316;   /* oranye */
+    fill: #f97316;  
 }
 .imap__pin-hole {
     fill: #fff;
     opacity: 0.9;
 }
 
-/* Tooltip */
 .imap__tooltip {
     position: absolute;
     transform: translate(-50%, -140%);
@@ -61,7 +57,6 @@
     box-shadow: 0 6px 18px rgba(0,0,0,.18);
 }
 
-/* Sedikit responsif untuk judul */
 @media (max-width: 768px) {
     .imap__title {
         font-size: 26px;

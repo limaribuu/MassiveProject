@@ -14,7 +14,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Wrap */
 .ft {
     width: 100%;
     background: var(--orange);
@@ -33,7 +32,6 @@ body {
     align-items: start;
 }
 
-/* Brand */
 .ft__title {
     font-size: 20px;
     font-weight: 700;
@@ -61,14 +59,12 @@ body {
     line-height: 0;
 }
 
-/* ⬇️ tambahan agar ikon sosmed dari <img> pas ukurannya */
 .si__img {
     width: 22px;
     height: 22px;
     display: block;
 }
 
-/* Columns heading & lists */
 .ft__head {
     font-size: 16px;
     font-weight: 700;
@@ -93,7 +89,6 @@ body {
     text-decoration: underline;
 }
 
-/* Contact */
 .ft__contact {
     list-style: none;
     display: grid;
@@ -107,14 +102,12 @@ body {
     font-size: 13.5px;
 }
 
-/* ⬇️ ikon kecil di contact (dari <img>) */
 .ico {
     width: 16px;
     height: 16px;
     display: block;
 }
 
-/* Map */
 .ft__map img {
     width: 240px;
     height: 140px;
@@ -123,7 +116,6 @@ body {
     border: 2px solid rgba(255, 255, 255, .9);
 }
 
-/* Bottom line */
 .ft__bottom {
     border-top: 1px solid rgba(255, 255, 255, .35);
     text-align: center;
@@ -132,7 +124,6 @@ body {
     opacity: .95;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .ft__wrap {
         grid-template-columns: 1fr 1fr;

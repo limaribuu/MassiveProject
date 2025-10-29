@@ -111,7 +111,6 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                 </div>
 
                 <style>{`
-                    /* Fade & geser kiri untuk gambar besar */
                     @keyframes bigOutLeftFade {
                         0%   { transform: translateX(0); opacity: 1; }
                         100% { transform: translateX(-120%); opacity: 0; }
@@ -120,7 +119,6 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         animation: bigOutLeftFade 700ms ease-out forwards;
                     }
 
-                    /* Gambar kecil → besar (bergerak ke kiri + scale up, tanpa overshoot) */
                     @keyframes smallToBig {
                         0% {
                             transform: translateX(0) scale(1);
@@ -135,7 +133,6 @@ export default function HeroSlider({ slides, activeIndex, onSelect }) {
                         animation: smallToBig 700ms cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
                     }
 
-                    /* Gambar ketiga masuk dari kanan (jadi kecil kanan) */
                     @keyframes thirdEnterToSmall {
                         0% {
                             transform: translateX(180px) scale(0.9);
