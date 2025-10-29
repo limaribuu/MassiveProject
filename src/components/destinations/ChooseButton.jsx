@@ -1,65 +1,50 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-/**
- * Reusable select button (location / category)
- * - shows floating dropdown when open
- * - purely Tailwind, no external CSS
- *
- * iconSrc: left icon
- * label: placeholder
- * items: array of strings
- * onSelect: (value)=>void
- * hintBox: optional node rendered just below the button (e.g., "Lokasi Anda")
- */
 const ChooseButton = ({
   iconSrc,
   label = "Pilih",
-  items = [],
   value,
+  items = [],
   onSelect,
   hintBox = null,
+  hintOnlyWhenOpen = false,
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
-  // close on outside click
   useEffect(() => {
-    const handler = (e) => {
+    const handleClick = (e) => {
       if (!ref.current?.contains(e.target)) setOpen(false);
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
+
+  const showHint = hintOnlyWhenOpen && open && hintBox;
+  const showList = open && !hintOnlyWhenOpen && items.length > 0;
 
   return (
     <div className="relative" ref={ref}>
-      {/* button */}
       <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        className="h-[52px] inline-flex items-center gap-2 rounded-2xl border border-orange-300 bg-white px-4 text-orange-500 shadow-[0_8px_24px_rgba(249,115,22,0.12)]"
+        onClick={() => setOpen(!open)}
+        className="flex h-[52px] min-w-[260px] items-center gap-3 rounded-lg border border-orange-600 bg-white px-4 text-[15px] font-medium text-gray-700 shadow-sm hover:shadow-md transition"
       >
-        {iconSrc ? <img src={iconSrc} alt="" className="w-5 h-5" /> : null}
-        <span className="text-[15px] font-semibold">
-          {value ?? label}
-        </span>
+        {iconSrc && <img src={iconSrc} alt="" className="h-5 w-5" />}
+        <span>{value || label}</span>
         <img
           src="/img/chevron-down.png"
-          alt=""
-          className={`w-4 h-4 ml-2 transition ${open ? "rotate-180" : ""}`}
+          className={`ml-auto h-4 w-4 transition ${open ? "rotate-180" : ""}`}
         />
       </button>
 
-      {/* hint box (e.g., 'Lokasi Anda') */}
-      {hintBox && (
-        <div className="absolute left-0 mt-3 hidden w-[300px] rounded-2xl border border-orange-100 bg-white px-4 py-3 text-orange-600 shadow-[0_10px_30px_rgba(0,0,0,0.08)] lg:block">
+      {showHint && (
+        <div className="absolute left-0 top-[58px] w-[260px] rounded-lg border bg-white px-4 py-3 shadow-md z-50">
           {hintBox}
         </div>
       )}
 
-      {/* dropdown list */}
-      {open && (
-        <div className="absolute left-0 top-[58px] z-20 w-[300px] rounded-2xl border border-orange-100 bg-white py-2 shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
+      {showList && (
+        <div className="absolute left-0 top-[58px] w-[260px] rounded-lg border bg-white shadow-lg z-50">
           {items.map((it, idx) => (
             <button
               key={idx}
@@ -67,7 +52,7 @@ const ChooseButton = ({
                 onSelect?.(it);
                 setOpen(false);
               }}
-              className="w-full px-4 py-2 text-left text-[15px] font-semibold text-orange-600 hover:bg-orange-50"
+              className="w-full px-4 py-2 text-left hover:bg-gray-100 text-gray-700"
             >
               {it}
             </button>

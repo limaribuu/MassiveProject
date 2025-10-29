@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx";
 import Detail from "./pages/Detail.jsx";
 import Destinasi from "./pages/Destinasi.jsx";
 import Ulasan from "./pages/Ulasan.jsx";
+import Itinerary from "./pages/Itinerary.jsx"
 
 const Login  = () => <div className="p-6">Login page</div>;
 const Signup = () => <div className="p-6">Signup page</div>;
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/destinasi" element={<Destinasi />} />
       <Route path="/ulasan" element={<Ulasan />} />
+      <Route path="/itinerary" element={<Itinerary />} />
       <Route path="/detail/:id" element={<Detail />} /> 
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />

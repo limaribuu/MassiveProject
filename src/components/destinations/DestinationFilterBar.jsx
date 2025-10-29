@@ -6,52 +6,56 @@ const DestinationFilterBar = ({ onSearch }) => {
   const [cat, setCat] = useState(null);
 
   return (
-    <div className="w-full">
-      {/* floating container */}
-      <div className="mx-auto w-full max-w-4xl rounded-2xl bg-white/90 p-4 shadow-[0_30px_60px_rgba(0,0,0,0.08)] ring-1 ring-white/70 backdrop-blur">
-        <div className="flex flex-wrap items-center gap-4">
-          {/* lokasi */}
-          <div className="relative">
-            <ChooseButton
-              iconSrc="/img/pin.png"
-              label="Pilih Lokasi"
-              value={loc}
-              onSelect={setLoc}
-              items={[
-                "Jakarta",
-                "Bandung",
-                "Palembang",
-                "Surabaya",
-                "Yogyakarta",
-              ]}
-              hintBox={
-                <div className="flex items-center gap-2">
-                  <img src="/img/target.png" alt="" className="w-5 h-5" />
-                  <span className="text-[15px] font-semibold">
-                    Lokasi Anda
-                  </span>
-                </div>
-              }
-            />
-          </div>
+    <div className="w-full flex justify-center">
+      <div className="
+        bg-white 
+        border border-gray-200 
+        rounded-lg 
+        shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+        px-8 py-5 
+        flex items-center gap-6
+        w-[900px]
+      ">
+        <ChooseButton
+          iconSrc="/img/pin.png"
+          label="Pilih Lokasi"
+          value={loc}
+          onSelect={setLoc}
+          hintOnlyWhenOpen
+          hintBox={
+            <div className="flex items-center gap-2 text-gray-700">
+              <img src="/img/target.png" className="w-5" />
+              <span>Lokasi Anda</span>
+            </div>
+          }
+        />
 
-          {/* kategori */}
-          <ChooseButton
-            iconSrc="/img/category.png"
-            label="Kategori"
-            value={cat}
-            onSelect={setCat}
-            items={["Sejarah & Budaya", "Religi", "Ikonik", "Kuliner", "Alam"]}
-          />
+        {/* Garis pemisah */}
+        <div className="h-10 w-px bg-gray-300 hidden md:block"></div>
 
-          {/* tombol cari */}
-          <button
-            onClick={() => onSearch?.({ loc, cat })}
-            className="ml-auto inline-flex h-[52px] items-center justify-center rounded-2xl bg-orange-400 px-8 text-base font-semibold text-white shadow-[0_10px_24px_rgba(249,115,22,0.35)] hover:bg-orange-500"
-          >
-            Cari
-          </button>
-        </div>
+        <ChooseButton
+          iconSrc="/img/category.png"
+          label="Kategori"
+          value={cat}
+          onSelect={setCat}
+          items={["Sejarah", "Religi", "Ikonik", "Kuliner", "Alam"]}
+        />
+
+        <button
+          onClick={() => onSearch?.({ loc, cat })}
+          className="
+            ml-auto 
+            bg-orange-500 hover:bg-orange-600 
+            text-white font-semibold 
+            h-[50px] 
+            px-10 
+            rounded-lg 
+            shadow-[0_6px_16px_rgba(249,115,22,0.35)]
+            transition
+          "
+        >
+          Cari
+        </button>
       </div>
     </div>
   );

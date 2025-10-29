@@ -8,6 +8,34 @@ import RecommendationSection from "../components/home/recommendations/Recommenda
 import Footer from "../components/common/Footer.jsx";
 
 const Detail = () => {
+  // Detail.jsx
+const hiddenGems = [
+    {
+        id: 1,
+        title: "Museum Balaputra Dewa",
+        desc: "Museum arkeologi dan budaya Sumatera Selatan.",
+        img: "/reco/balaputra.png",
+        rating: 4.0,
+        to: "/detail/museum-balaputra",
+    },
+    {
+        id: 2,
+        title: "Bukit Siguntang",
+        desc: "Situs bersejarah Kerajaan Sriwijaya.",
+        img: "/reco/bukit-siguntang.png",
+        rating: 4.0,
+        to: "/detail/bukit-siguntang",
+    },
+    {
+        id: 3,
+        title: "Benteng Kuto Besak",
+        desc: "Benteng peninggalan Kesultanan Palembang.",
+        img: "/reco/bkb.png",
+        rating: 4.0,
+        to: "/detail/bkb",
+    },
+];
+
   return (
     <>
       <Navbar />
@@ -61,8 +89,10 @@ const Detail = () => {
           </div>
         </div>
       </div>
-
-      <RecommendationSection />
+        <div className="text-3xl font-bold text-gray-900 leading-tight text-center my-8 pt-20">
+          Rekomendasi Destinasi
+        </div>
+        <RecommendationSection items={hiddenGems} />
       <Footer />
     </>
   );
