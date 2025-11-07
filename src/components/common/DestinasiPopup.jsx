@@ -5,14 +5,12 @@ export default function DestinationPopup({ open, onClose, title = "Destinasi Ter
 
     return (
         <div className="fixed inset-0 z-100">
-            {/* Backdrop gelap */}
             <div
                 className="absolute inset-0 bg-black/50"
                 onClick={onClose}
                 aria-hidden="true"
             />
 
-            {/* Card popup */}
             <div className="relative z-101 h-full w-full flex items-center justify-center p-4">
                 <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md text-center">
                     <h2 className="text-2xl font-bold text-orange-500 mb-6">

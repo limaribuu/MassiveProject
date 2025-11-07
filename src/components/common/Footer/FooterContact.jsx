@@ -7,7 +7,7 @@ export default function FooterContact() {
             <ul className="flex flex-col gap-3 text-white/90">
                 <li className="flex items-center gap-3">
                     <img src="/icon/phone.png" alt="Phone" className="h-6 w-6" />
-                    <span>+62 821 4545 8777</span>
+                    <span>+62 821 0000 0000</span>
                 </li>
                 <li className="flex items-center gap-3">
                     <img src="/icon/email.png" alt="Email" className="h-6 w-6" />

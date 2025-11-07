@@ -9,17 +9,17 @@ import HiddenGem from "./pages/HiddenGem.jsx";
 import Populer from "./pages/Populer.jsx";     
 
 export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" replace />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/destinasi" element={<Destinasi />} />
-      <Route path="/ulasan" element={<Ulasan />} />
-      <Route path="/itinerary" element={<Itinerary />} />
-      <Route path="/detail/:id" element={<Detail />} /> 
-      <Route path="*" element={<Navigate to="/home" replace />} />
-      <Route path="/hidden-gem" element={<HiddenGem />} />
-      <Route path="/populer" element={<Populer />} />
-    </Routes>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/destinasi" element={<Destinasi />} />
+            <Route path="/ulasan" element={<Ulasan />} />
+            <Route path="/itinerary" element={<Itinerary />} />
+            <Route path="/detail/:id" element={<Detail />} /> 
+            <Route path="*" element={<Navigate to="/home" replace />} />
+            <Route path="/hidden-gem" element={<HiddenGem />} />
+            <Route path="/populer" element={<Populer />} />
+        </Routes>
+    );
 }
